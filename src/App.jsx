@@ -25,6 +25,11 @@ function App() {
 		document.getElementById('quote').textContent = quote;
 		document.getElementById('author').textContent = autor;
 	}
+
+	//wyswietl poprzednia
+	function showPrevious(){
+		
+	}
 	
   return (
     <main>
@@ -43,7 +48,11 @@ function App() {
       </div>
     
 			<div class="button" >
-        <button onClick={showQuote} class="btn btn-info" type="button"> Click me </button> 
+        <button onClick={showQuote} class="btn btn-info" type="button"> Click me ! </button> 
+       </div>
+
+			<div class="button" >
+        <button onClick={showPrevious} class="btn btn-info" type="button"> Previous show </button> 
        </div>
 
     </div>

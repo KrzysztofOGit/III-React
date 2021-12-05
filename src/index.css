@@ -6,9 +6,7 @@ body
 }
 
 div{
-  
   text-align: center;
-  
 }
 
 div.one{
@@ -29,4 +27,8 @@ div.autor
 {
   margin-top: 25px;  
   font-style: italic; 
+}
+
+button{
+	margin: 5px;
 }
