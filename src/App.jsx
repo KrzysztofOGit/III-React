@@ -1,20 +1,9 @@
 import React from 'react';
 import {useState, useEffect} from "react";
 import './App.css';
-//import './ShowQuote.jsx';
 
-// const quotes = {
-//   "Walt Disney": '"Jeśli możesz sobie coś wymarzyć, możesz to zrobić."',
-//   "Nelson Mandela": '"Zawsze wydaje się, że coś jest niemożliwe, dopóki nie zostanie to zrobione."',
-//   "Michael Jordan": '"Nie trafiłem ponad 9000 rzutów w moim życiu. Przegrałem ponad 300 meczów. 26 razu zaufano mi, gdy miałem oddać rzut na miarę zwycięstwa i spudłowałem. Przegrywałem w moim życiu ciągle. Dlatego właśnie osiągnąłem sukces."'
-// }
 
 //nie sporawdzam czy plik istnieje
-
-
-
-
-
 function App() {
 	const [quotes, setQuotes] = useState([]);
 	useEffect(() => {
@@ -24,22 +13,17 @@ function App() {
 		.catch(err => console.log(err))
 	},[]);
 	
-
+//wylosowanie i wyswietlenie cytatu
 	function showQuote() {
 		let randomQuotes = Math.floor(Math.random() * quotes.length);
 		console.log(randomQuotes);
-		//var mydata = JSON.parse(quotes);
-		//console.log(this.state.quotes);
-		//utworzenie tablicy z autorami z obiektu quotes 
-		//var autorzy = Object.keys(quotes);
-		//wylosowanie liczby z tablicy autorzy
-		//var ranQuote = Math.floor(Math.random()* autorzy.length);
+		console.log(quotes[randomQuotes]);
 		
-		//var autor = autorzy[ranQuote];
-		//var quote = quotes[autor];
-		
-		//document.getElementById('quote').textContent = quote;
-		//document.getElementById('author').textContent = autor;
+		let autor = quotes[randomQuotes].author;
+		let quote = quotes[randomQuotes].quote;		
+
+		document.getElementById('quote').textContent = quote;
+		document.getElementById('author').textContent = autor;
 	}
 	
   return (
