@@ -10,13 +10,13 @@ div{
 }
 
 div.one{
+	font-size: 36px;
   background-color: white;
   margin: auto; 
   border-style: double ;
   border-radius: 12px;
   height: 250px;
   width: 50%;
-  background-color: ;
   text-align: center;
   padding: 20px;
   margin-bottom: 25px;  
@@ -26,9 +26,31 @@ div.one{
 div.autor
 {
   margin-top: 25px;  
-  font-style: italic; 
+  font-style: italic;
+	
 }
 
-button{
+.button{
+	
 	margin: 5px;
+		
+  background-color: #0099ff;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+
 }
+
+.button:hover {
+  background-color: #66a3ff; /* Green */
+  color: white;
+}
+
+
+

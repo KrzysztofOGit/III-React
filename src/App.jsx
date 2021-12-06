@@ -46,15 +46,16 @@ function App() {
           "Autor"
         </div>
       </div>
-    
+    <div>
 			<div class="button" >
-        <button onClick={showQuote} class="btn btn-info" type="button"> Click me ! </button> 
+        <button onClick={showPrevious} class="button" type="button"> Back</button> 
        </div>
 
 			<div class="button" >
-        <button onClick={showPrevious} class="btn btn-info" type="button"> Previous show </button> 
+        <button onClick={showQuote} class="button" type="button"> Next  </button> 			
        </div>
 
+		</div>
     </div>
 
     </main>
