@@ -12,47 +12,69 @@ function App() {
 		.then(data => setQuotes(data))
 		.catch(err => console.log(err))
 	},[]);
-	
+
+		let autor ;
+		let quote ;
+		let tempRandomQuotes = []; //zapamietanie numeru wylosowanego cytatu 
+		let indexTab = 0;
 //wylosowanie i wyswietlenie cytatu
 	function showQuote() {
-		let randomQuotes = Math.floor(Math.random() * quotes.length);
-		console.log(randomQuotes);
-		console.log(quotes[randomQuotes]);
+		let randomQuotes = Math.floor(Math.random() * (quotes.length+1));
 		
-		let autor = quotes[randomQuotes].author;
-		let quote = quotes[randomQuotes].quote;		
+		tempRandomQuotes.push(randomQuotes); // zapamietanie ktory cytat wylosowany
+
+		autor = quotes[randomQuotes].author;
+		quote = quotes[randomQuotes].quote;		
 
 		document.getElementById('quote').textContent = quote;
 		document.getElementById('author').textContent = autor;
+
+		indexTab = tempRandomQuotes.length-1;
 	}
 
-	//wyswietl poprzednia
+	//wyswietl poprzedniego cytatu nie wiem czy to nalepsza metoda mozna by ja refaktoryzowac 
 	function showPrevious(){
-		
+			
+		if(tempRandomQuotes.length == []){
+			document.getElementById('quote').textContent = "Miejsce na cytat";
+			document.getElementById('author').textContent = "Autor";
+			console.log("test 1" );
+
+			}	else { 
+				//odczytanie zawartosci indexTab tablicy tempRandomQuotes
+				(indexTab <= 0) ? (indexTab = 0) : (indexTab -= 1);
+
+				let j = tempRandomQuotes[indexTab];
+				 
+				 let tmpAutor = quotes[j].author;
+				 let tmpQuote = quotes[j].quote;	
+
+				 document.getElementById('quote').textContent = tmpQuote;
+				 document.getElementById('author').textContent = tmpAutor;
+			}
 	}
-	
   return (
     <main>
 			<div>
       <h1>Random Quotes</h1>
       
-      <div class="one" >
+      <div className="one" >
         
         <div id="quote">
-          "Miejsce na cytat"
+          Miejsce na cytat
         </div>
         
-      <div class="author" id="author">
-          "Autor"
+      <div className="author" id="author">
+          Autor
         </div>
       </div>
     <div>
-			<div class="button" >
-        <button onClick={showPrevious} class="button" type="button"> Back</button> 
+			<div className="button" >
+        <button onClick={showPrevious} className="button" type="button"> Back</button> 
        </div>
 
-			<div class="button" >
-        <button onClick={showQuote} class="button" type="button"> Next  </button> 			
+			<div className="button" >
+        <button onClick={showQuote} className="button" type="button"> Next  </button> 			
        </div>
 
 		</div>
