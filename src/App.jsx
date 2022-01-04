@@ -19,7 +19,7 @@ function App() {
 		let indexTab = 0;
 //wylosowanie i wyswietlenie cytatu
 	function showQuote() {
-		let randomQuotes = Math.floor(Math.random() * (quotes.length+1));
+		let randomQuotes = Math.floor(Math.random() * (quotes.length + 1));
 		
 		tempRandomQuotes.push(randomQuotes); // zapamietanie ktory cytat wylosowany
 
